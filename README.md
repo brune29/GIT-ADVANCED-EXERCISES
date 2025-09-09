@@ -74,9 +74,4 @@ git log --oneline -6
 #ba4eef5 Initial commit
 
 git rebase -i HEAD~4
-=======
-#ba4eef5 Initial commit
->>>>>>> 04b687b (commit readme changes)
-=======
-#ba4eef5 Initial commit
->>>>>>> 4b847bb (commit readme)
+
