@@ -1,1 +1,62 @@
-# GIT-ADVANCED-EXERCISES
+# Git Advanced Exercises
+
+## Part 1
+
+### Missing File Fix
+
+```bash
+git status
+# Untracked files:
+# (use "git add <file>..." to include in what will be committed)
+#       test4.md
+
+# nothing added to commit but untracked files present (use "git add" to track)
+git add test4.md
+git commit --amend -m "chore:Create third and fourth files (fix-added 
+test4.md)"
+#[main d141072] chore:Create third and fourth files (fix-added test4.md)
+# Date: Mon Sep 8 14:10:52 2025 +0200
+# 2 files changed, 0 insertions(+), 0 deletions(-)
+# create mode 100644 test3.md
+# create mode 100644 test4.md
+```
+
+
+### Editing Commit History:
+```bash
+ git rebase -i HEAD~2
+
+#[detached HEAD 462cacd] chore: Create second file
+#Date: Mon Sep 8 14:10:17 2025 +0200
+#1 file changed, 0 insertions(+), 0 deletions(-)
+#create mode 100644 test2.md
+#Successfully rebased and updated refs/heads/main.
+git log --oneline
+
+#22d0a75 (HEAD -> main) chore:Create third and fourth files (fix-added test4.md)
+#462cacd chore: Create second file
+#1185a4f chore: Create initial file
+```
+
+### Keeping History Tidy - Squashing Commits:
+```bash
+git log --oneline --graph
+git rebase -i ba4eef5 
+git push --force
+```
+### Splitting a Commit:
+```bash
+git log --oneline --graph -5
+#f0f5008 (HEAD) chore:Create third and fourth files (fix-added test4.md)
+#* 23480e9 chore: Create initial and second file
+#* ba4eef5 Initial commit
+git reset HEAD~1
+git add test3.md
+git commit -m "Create Third File"
+git add test4.md
+git commit -m "commit fourth File"
+git log --oneline
+#8541719 (HEAD) Create Fourth File
+#127898b Create Third File
+#23480e9 chore: Create initial and second file
+#ba4eef5 Initial commit
