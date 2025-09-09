@@ -72,4 +72,3 @@ git log --oneline -6
 #ba4eef5 Initial commit
 
 git rebase -i HEAD~4
-#Create Third and Fourth File
