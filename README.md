@@ -59,6 +59,7 @@ git log --oneline
 #8541719 (HEAD) Create Fourth File
 #127898b Create Third File
 #23480e9 chore: Create initial and second file
+<<<<<<< HEAD
 #ba4eef5 Initial commit
 ```
 ### Advanced Squashing:
@@ -72,3 +73,6 @@ git log --oneline -6
 #ba4eef5 Initial commit
 
 git rebase -i HEAD~4
+=======
+#ba4eef5 Initial commit
+>>>>>>> 04b687b (commit readme changes)
