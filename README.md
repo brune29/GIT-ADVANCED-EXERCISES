@@ -75,6 +75,7 @@ git log --oneline -6
 
 git rebase -i HEAD~4
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #ba4eef5 Initial commit
 >>>>>>> 04b687b (commit readme changes)
@@ -100,4 +101,5 @@ git log --oneline
 
 git rebase -i HEAD~1
 #Successfully rebased and updated refs/heads/main.
+
 
