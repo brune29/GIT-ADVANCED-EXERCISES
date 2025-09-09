@@ -60,3 +60,16 @@ git log --oneline
 #127898b Create Third File
 #23480e9 chore: Create initial and second file
 #ba4eef5 Initial commit
+```
+### Advanced Squashing:
+```bash
+git log --oneline -6
+#4b847bb (HEAD -> main, origin/main, origin/HEAD) commit readme
+#04b687b commit readme changes
+#8541719 Create Fourth File
+#127898b Create Third File
+#23480e9 chore: Create initial and second file
+#ba4eef5 Initial commit
+
+git rebase -i HEAD~4
+#Create Third and Fourth File
