@@ -101,5 +101,22 @@ git log --oneline
 
 git rebase -i HEAD~1
 #Successfully rebased and updated refs/heads/main.
+```
 
-
+#### Reordering Commits:
+```bash
+ git log --oneline
+ #commit latest changes on readme.md
+#f3c9ab0 commit unwanted txt
+#665515d (origin/main, origin/HEAD) readme latest changes
+#11267b7 commit readme
+#f3ac7af commit readme changes
+#6b807f1 commit changes
+#f09d6b4 commit the latest changes
+git rebase -i HEAD~3
+#Successfully rebased and updated refs/heads/main.
+git log --oneline
+#readme latest changes
+#9f7b140 commit unwanted txt
+#24b4ee4 readme
+#11267b7 commit readme
