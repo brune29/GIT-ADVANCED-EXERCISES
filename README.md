@@ -74,9 +74,30 @@ git log --oneline -6
 #ba4eef5 Initial commit
 
 git rebase -i HEAD~4
+<<<<<<< HEAD
 =======
 #ba4eef5 Initial commit
 >>>>>>> 04b687b (commit readme changes)
 =======
 #ba4eef5 Initial commit
 >>>>>>> 4b847bb (commit readme)
+=======
+```
+### Dropping a commit:
+```bash
+git log --oneline
+#UNWANTED.TXT
+#f3c9ab0 commit unwanted txt
+#665515d (origin/main, origin/HEAD) readme latest changes
+#11267b7 commit readme
+#f3ac7af commit readme changes
+#6b807f1 commit changes
+#f09d6b4 commit the latest changes
+#ebfdab1 commit readme
+#73a660c Create Third and Fourth File
+#23480e9 chore: Create initial and second file
+#ba4eef5 Initial commit
+
+git rebase -i HEAD~1
+#Successfully rebased and updated refs/heads/main.
+
