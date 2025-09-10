@@ -160,6 +160,26 @@ git add feature.txt
 git commit -m "Implemented core functionality for new feature"
 git log --oneline -1
 #63aa766 (HEAD -> ft/new-feature) Implemented core functionality for new feature
-=======
+```
+### Switching Back and Making More Changes:
+```bash
+ git checkout main
+# Switched to branch 'main'
+"This is the content for projectreadme" | Out-File -Encoding utf8 readme.txt
+git add .
+git commit -m "updated project readme"
+```
+### Local vs. Remote Branches:
+```bash
+git push -u  origin ft/new-feature
+#completed with 2 local objects.
+git switch main
+```
+### Branch Deletion:
+```bash
+git branch -d ft/new-feature
+#Deleted branch ft/new-feature (was 63aa766).
+git switch main
+#Switched to branch 'main'
 
 
