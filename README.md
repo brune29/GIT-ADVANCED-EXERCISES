@@ -76,6 +76,7 @@ git log --oneline -6
 git rebase -i HEAD~4
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #ba4eef5 Initial commit
 >>>>>>> 04b687b (commit readme changes)
@@ -159,3 +160,6 @@ git add feature.txt
 git commit -m "Implemented core functionality for new feature"
 git log --oneline -1
 #63aa766 (HEAD -> ft/new-feature) Implemented core functionality for new feature
+=======
+
+
