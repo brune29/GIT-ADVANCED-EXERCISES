@@ -142,3 +142,20 @@ git log --oneline
 #9f7b140 commit unwanted txt
 #24b4ee4 readme
 #11267b7 commit readme
+
+```
+## Part 2
+### Feature Branch Creation:
+```bash
+git checkout -b ft/new-feature
+### Switched to a new branch 'ft/new-feature'
+```
+### Working on the Feature Branch:
+```bash
+git checkout -b ft/new-feature
+#Switched to a new branch 'ft/new-feature'
+"This is the functionality of the new feature" | Out-File -Encoding utf8 feature.txt
+git add feature.txt
+git commit -m "Implemented core functionality for new feature"
+git log --oneline -1
+#63aa766 (HEAD -> ft/new-feature) Implemented core functionality for new feature
