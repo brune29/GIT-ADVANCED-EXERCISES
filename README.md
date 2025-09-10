@@ -181,5 +181,51 @@ git branch -d ft/new-feature
 #Deleted branch ft/new-feature (was 63aa766).
 git switch main
 #Switched to branch 'main'
+```
+### Creating a Branch from a Commit:
+```bash
+git log --oneline
+#a16eac9 (HEAD -> main) commit latest changes
+#7dbb561 (origin/main, origin/HEAD) Merge branch 'main' of https://github.com/brune29/GIT-ADVANCED-EXERCISES
+#bc2454b updated project readme
+git checkout -b ft/new-branch-from-commit bc2454b 
+#Switched to a new branch 'ft/new-branch-from-commit'
+git add .
+git commit -m "commit readme after creating a b from a specific commit"
+```
+### Branch Merging:
+```bash
+git checkout main
+# Switched to branch 'main'
+git merge ft/new-branch-from-commit
+# Merge made by the 'ort' strategy.
+```
+### Branch Rebasing:
+```bash
+git log --oneline  
+# 6075b1f (HEAD -> main) Merge branch 'ft/new-branch-from-commit'
+# d52f3ff (ft/new-branch-from-commit) commit readme after creating a b from a specific commit
+# a16eac9 (origin/main, origin/HEAD) commit latest changes
 
+git checkout ft/new-branch-from-commit    
+# Switched to branch 'ft/new-branch-from-commit'
+git rebase main
+# Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
+```
+### Renaming Branches:
+```bash
+git branch -m ft/improved-branch-name
+```
 
+### Checking Out Detached HEAD:
+```bash
+git log --oneline
+# 6075b1f (HEAD -> main, origin/main, origin/HEAD, ft/improved-branch-name) Merge branch 'ft/new-branch-from-commit'
+# d52f3ff commit readme after creating a b from a specific commit
+# a16eac9 commit latest changes
+# 7dbb561 Merge branch 'main' of https://github.com/brune29/GIT-ADVANCED-EXERCISES
+# bc2454b updated project readme
+
+git checkout d52f3ff
+# Note: switching to 'd52f3ff'.
+# You are in 'detached HEAD' state. You can look around, make experimental changes and commit them ..
