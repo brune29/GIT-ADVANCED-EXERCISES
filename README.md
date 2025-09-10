@@ -120,3 +120,25 @@ git log --oneline
 #9f7b140 commit unwanted txt
 #24b4ee4 readme
 #11267b7 commit readme
+```
+
+### Cherry-Picking Commits:
+
+```bash
+git checkout -b ft/branch
+#Switched to a new branch 'ft/branch'
+"This is test5 content" | Out-File -Encoding utf8 test5.md
+git add test5.md
+git commit -m "Implemented test 5"
+git checkout main
+#Switched to branch 'main'
+git log ft/branch --oneline -1
+#Implemented test 5 Date: Wed Sep 10 14:05:39 2025 +0200 1 file changed, 1 insertion(+) create mode 100644 test5.md
+git cherry-pick 3ec6376
+git log --oneline
+#Implemented test 5
+#d0007a6 commit readme
+#780f33b readme latest changes
+#9f7b140 commit unwanted txt
+#24b4ee4 readme
+#11267b7 commit readme
