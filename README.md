@@ -229,3 +229,5 @@ git log --oneline
 git checkout d52f3ff
 # Note: switching to 'd52f3ff'.
 # You are in 'detached HEAD' state. You can look around, make experimental changes and commit them ..
+```
+## Part 3
