@@ -231,3 +231,41 @@ git checkout d52f3ff
 # You are in 'detached HEAD' state. You can look around, make experimental changes and commit them ..
 ```
 ## Part 3
+### Stashing Changes:
+```bash
+echo "temporary work for testing" > main-temp.txt
+git stash push -m "temp work on main"
+#Saved working directory and index state On main: temp work on main
+```
+### Retrieving Stashed Changes:
+```bash
+git stash list
+#stash@{0}: On main: temp work on main
+git stash pop
+#(use "git add <file>..." to include in what will be committed)
+        #main-temp.txt
+git add main-temp.txt
+git commit -m "chore: add main-temp to use stash"
+git stash list
+#(nothing showed up when this command was run because it had been popped!)
+```
+
+### Branch Merging Conflicts (Continued):
+```bash
+git checkout main
+echo "main branch content" >conflict.txt
+git add conflict.txt
+git commit -m "chore: added main branch content"
+
+git checkout -b ft/merging-branch
+echo "feature branch content" > conflict.txt
+git add conflict.txt
+
+git merge ft/merging-branch
+#CONFLICT (content): Merge conflict in conflict.txt
+#Automatic merge failed; fix conflicts and then commit the result.
+git add conflict.txt
+git commit -m "merged main and feature branch content"
+#[main 0b72db6] merged main and feature branch content
+cat conflict.txt
+#resolved:merged main and feature branch content
